@@ -213,9 +213,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event listeners
-    startBtn.addEventListener('click', startGame);
-    instructionsBtn.addEventListener('click', () => showScreen(instructionsScreen));
-    backBtn.addEventListener('click', () => showScreen(welcomeScreen));
+    startBtn.addEventListener('click', () => {
+        alert('Start Adventure clicked!');
+        startGame();
+    });
+    instructionsBtn.addEventListener('click', () => {
+        alert('Instructions clicked!');
+        showScreen(instructionsScreen);
+    });
+    backBtn.addEventListener('click', () => {
+        alert('Back clicked!');
+        showScreen(welcomeScreen);
+    });
     submitBtn.addEventListener('click', checkAnswer);
     hintBtn.addEventListener('click', showHintEarly);
     playAgainBtn.addEventListener('click', startGame);
