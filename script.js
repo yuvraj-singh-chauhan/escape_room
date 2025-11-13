@@ -4,71 +4,71 @@ document.addEventListener('DOMContentLoaded', () => {
     let current = 0;
     let attempts = 0;
     let maxAttempts = 3;
-    let timeLeft = 300; // 5 minutes in seconds
+    let timeLeft = 600; // 10 minutes in seconds
     let timerRunning = false;
     let timerInterval = null;
 
     // Questions array
     const questions = [
         {
-            title: "🐍 PUZZLE 1",
-            question: "What is the output of: print(list(zip([1,2], [3,4])))?",
-            answer: "[(1, 3), (2, 4)]",
-            hint: "Zip pairs up elements from multiple iterables."
+            title: "🔌 PUZZLE 1",
+            question: "I’m like an OR, but with a twist, Only one input must exist. If both are same, I say ‘No way!’ But if they differ, I light the way. What gate am I?",
+            answer: "xor gate",
+            hint: "This gate outputs true only when inputs are different."
         },
         {
-            title: "⚙️ PUZZLE 2",
-            question: "What is the result of: print(1 // 2 * 3)?",
+            title: "⚡ PUZZLE 2",
+            question: "In a hypothetical CPU, an instruction takes 4 cycles to execute. If the clock speed is 2 GHz, how long does one instruction take?",
+            answer: "2 nanoseconds",
+            hint: "Calculate time per cycle as 1 divided by frequency, then multiply by cycles per instruction."
+        },
+        {
+            title: "🔒 PUZZLE 3",
+            question: "A D flip-flop receives a clock pulse every 10 ns. If D = 1 for the first 3 pulses and 0 for the next 2, what’s the output after 5 pulses?",
             answer: "0",
-            hint: "Floor division and multiplication precedence."
+            hint: "The output follows the D input at the last pulse."
         },
         {
-            title: "🧮 PUZZLE 3",
-            question: "What does this return: print([].append(1))?",
-            answer: "none",
-            hint: "Append modifies in-place and returns None."
+            title: "🛠️ PUZZLE 4",
+            question: "A 5-stage pipeline executes 100 instructions. If there are no stalls, how many cycles are needed?",
+            answer: "104 cycles",
+            hint: "Use the formula: stages + (instructions - 1)."
         },
         {
-            title: "💾 PUZZLE 4",
-            question: "What is the output of: print({1, 2, 2, 3})?",
-            answer: "{1, 2, 3}",
-            hint: "Sets automatically remove duplicates."
-        },
-        {
-            title: "🔁 PUZZLE 5",
-            question: "What is printed by: print(lambda x: x)(5)?",
-            answer: "5",
-            hint: "Lambda functions can be called immediately."
+            title: "🔄 PUZZLE 5",
+            question: "What is the output of this Python code? for i in range(3): print(i, end=", ")",
+            answer: "0, 1, 2,",
+            hint: "The loop runs from 0 to 2, and end parameter adds a comma and space."
         },
         {
             title: "🎭 PUZZLE 6",
-            question: "What is the output of: print('a'.join(['1', '2']))?",
-            answer: "1a2",
-            hint: "Join uses the string as a separator."
+            question: "The Memory Twin: I allocate memory, but I don’t initialize it. My sibling does both. Who are we?",
+            answer: "malloc() and calloc()",
+            hint: "These are C functions for memory allocation."
         },
         {
             title: "🧩 PUZZLE 7",
-            question: "What is the result of: print(2 ** 3 ** 2)?",
-            answer: "512",
-            hint: "Exponentiation is right-associative."
+            question: "I turn source code into object code. But I don’t link or run it. What phase am I?",
+            answer: "compilation",
+            hint: "This step comes before linking."
         },
         {
             title: "📦 PUZZLE 8",
-            question: "What will this print: print(int('0x10', 16))?",
-            answer: "16",
-            hint: "Converting hexadecimal string to integer."
+            question: "I’m close to the machine. I give you direct access to memory, but you must manage it yourself. I’m fast, but unforgiving. What language am I?",
+            answer: "c",
+            hint: "Known for pointers and manual memory management."
         },
         {
             title: "🐢 PUZZLE 9",
-            question: "What is the output of: print([i for i in range(5) if i % 2][0])?",
-            answer: "1",
-            hint: "List comprehension with condition, first odd number."
+            question: "I don’t care about your type — if you act like it, I’ll treat you like it. What typing philosophy do I follow? Hint: Think of a bird that walks and quacks.",
+            answer: "duck typing",
+            hint: "If it looks like a duck and quacks like a duck, it’s a duck."
         },
         {
             title: "🧠 PUZZLE 10",
-            question: "What does this return: print(all([True, False, True]))?",
-            answer: "false",
-            hint: "All returns True only if every element is True."
+            question: "I store data in rows and columns, But I’m not a spreadsheet. I’m fast, volatile, and live close to the CPU. What am I?",
+            answer: "cache memory",
+            hint: "It’s a high-speed storage near the processor."
         }
     ];
 
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timerEl.textContent = 'Time: 0:00';
             timerEl.style.color = '#ff0000';
             clearInterval(timerInterval);
-            alert("Time's up! You couldn't escape in 5 minutes.");
+            alert("Time's up! You couldn't escape in 10 minutes.");
             showResult();
         }
     }
@@ -189,15 +189,15 @@ document.addEventListener('DOMContentLoaded', () => {
         resultTitle.textContent = passed ? '🏆 ESCAPED!' : '🔒 TRAPPED!';
         resultTitle.style.color = score >= 7 ? '#00ffaa' : '#ff5555';
         resultScore.textContent = `Score: ${score}/10`;
-        resultMessage.textContent = passed ? 'You escaped the Python dungeon!' : 'You got trapped in the infinite loop... Try again!';
+        resultMessage.textContent = passed ? 'You escaped successfully!' : 'You got trapped... Try again!';
     }
 
     function startGame() {
         score = 0;
         current = 0;
         attempts = 0;
-        timeLeft = 300;
-        timerEl.textContent = 'Time: 5:00';
+        timeLeft = 600;
+        timerEl.textContent = 'Time: 10:00';
         timerEl.style.color = '#ffcc00';
         startTimer();
         showScreen(gameScreen);
