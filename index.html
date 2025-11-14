@@ -13,8 +13,8 @@
             <h1>🔌 WELCOME TO ESCAPE ROOM 🧩</h1>
             <p>Solve 10 logic gate and programming puzzles. 3 attempts each. Can you escape?</p>
             <div class="separator"></div>
-            <button id="start-btn">▶ START ADVENTURE</button>
-            <button id="instructions-btn">📜 INSTRUCTIONS</button>
+            <button id="start-btn" onclick="startGameFallback()">▶ START ADVENTURE</button>
+            <button id="instructions-btn" onclick="instructionsFallback()">📜 INSTRUCTIONS</button>
             <div class="bottom-bar">v1.0 | Logic Gates Mystery</div>
         </div>
 
@@ -29,7 +29,7 @@
                 <li>- Think logically!</li>
                 <li>- You have 10 minutes total to escape!</li>
             </ul>
-            <button id="back-btn">↩ BACK</button>
+            <button id="back-btn" onclick="backFallback()">↩ BACK</button>
         </div>
 
         <div id="game-screen" class="screen">
@@ -52,6 +52,7 @@
                 <div class="button-group">
                     <button id="submit-btn">🔍 SUBMIT</button>
                     <button id="hint-btn">💡 HINT</button>
+                    <button id="restart-btn">🔄 RESTART</button>
                 </div>
             </div>
         </div>
@@ -67,5 +68,20 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        // Fallback functions for button clicks
+        function startGameFallback() {
+            console.log('Fallback: Start Adventure clicked');
+            window.startGame && window.startGame();
+        }
+        function instructionsFallback() {
+            console.log('Fallback: Instructions clicked');
+            window.showInstructions && window.showInstructions();
+        }
+        function backFallback() {
+            console.log('Fallback: Back clicked');
+            window.showWelcome && window.showWelcome();
+        }
+    </script>
 </body>
 </html>
