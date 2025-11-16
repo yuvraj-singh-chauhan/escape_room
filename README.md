@@ -1,12 +1,12 @@
-# Logic Gates Escape Room Game
+# Horror Escape Room Game
 
-A web-based escape room game themed around logic gates and programming puzzles. Solve accessible questions within a 10-minute time limit to escape!
+A web-based escape room game themed around a haunted horror room with eerie programming puzzles. Solve 10 terrifying questions within a 10-minute time limit to escape!
 
 ## How to Play
 
 1. Open `index.html` in a web browser or host it on a web server (like GitHub Pages).
-2. Click 'Start Adventure' to begin.
-3. Answer 10 logic gate and programming-related questions, with 3 attempts per question.
+2. Click 'Begin Nightmare' to start.
+3. Answer 10 horror-themed programming questions, with 3 attempts per question.
 4. Score at least 5 to escape, aim for 7+ for mastery.
 5. You have 10 minutes total—watch the timer!
 
@@ -19,14 +19,14 @@ A web-based escape room game themed around logic gates and programming puzzles. 
 ## Files
 
 - `index.html` - Main game page
-- `styles.css` - Styling for the game
+- `styles.css` - Styling for the horror theme
 - `script.js` - Game logic
 
 ## Features
 
-- Modern, dark-themed UI with progress indicators
+- Dark, eerie horror-themed UI with creepy visuals
 - 10-minute countdown timer
 - Hints available for puzzles
 - Responsive design for various screen sizes
 
-Enjoy the challenge!
+Survive the horror and escape!
